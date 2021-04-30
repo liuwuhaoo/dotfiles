@@ -6,3 +6,5 @@
   - [ ] auto jump
 - [ ] alacritty
 - [ ] vimrc
+- [ ] tmux
+- [ ] lf
