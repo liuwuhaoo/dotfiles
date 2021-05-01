@@ -84,9 +84,9 @@ else
 fi
 
 # link zsh
+rm ~/.zhsrc
 ls -l ~/.zshrc || {
     tip zshrc true
-    rm ~/.zshrc
     ln -s $PWD/.zshrc ~/.zshrc
     tip zshrc false
 }

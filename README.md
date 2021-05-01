@@ -18,6 +18,7 @@ https://github.com/gokcehan/lf/releases
 
 
 
+
 # Terminal Configuration
 
 - [ ] curl
@@ -28,4 +29,5 @@ https://github.com/gokcehan/lf/releases
 - [ ] vimrc
 - [ ] tmux
 - [ ] lf
+
 
