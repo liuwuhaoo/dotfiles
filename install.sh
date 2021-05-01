@@ -31,20 +31,18 @@ function install() {
     tip $1
 }
 
-# curl
-curl --version || {
-    install curl
+function check_version_install() {
+    $1 --version || install $1 
 }
 
+# curl
+check_version_install curl
+
 #wget
-wget --version || {
-    install wget
-}
+check_version_install wget
+
 # vim
-# install
-vim --version || {
-    install vim
-}
+check_version_install vim
 
 ls -l ~/.vim/autoload || {
     tip vim-plug true
@@ -59,18 +57,36 @@ ls -l ~/.vimrc || {
 }
 
 # zsh
-# install
-zsh --version || {
-    install zsh
-}
+check_version_install zsh
+
 # .oh-my-zsh
 ls -l ~/.oh-my-zsh || {
     sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
+# auto-jump
+check_version_install autojump
+
+# zsh-syntax-highlighting
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting];
+then
+    echo "zsh-syntax-highlighting Installed"
+else
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+
+# zsh-autosuggestions
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions];
+then
+    echo "zsh-autosuggestions Installed"
+else
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
 # link zsh
 ls -l ~/.zshrc || {
     tip zshrc true
+    rm ~/.zshrc
     ln -s $PWD/.zshrc ~/.zshrc
     tip zshrc
 }
