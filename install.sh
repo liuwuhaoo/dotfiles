@@ -57,9 +57,9 @@ ls -l ~/.vimrc || {
 # zsh
 # install
 zsh --version || {
-    vim zsh true
+    tip zsh true
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    vim zsh
+    tip zsh
 }
 # link zsh
 ls -l ~/.zshrc || {
