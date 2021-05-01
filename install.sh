@@ -36,6 +36,10 @@ curl --version || {
     install curl
 }
 
+#wget
+wget --version || {
+    install wget
+}
 # vim
 # install
 vim --version || {
@@ -58,8 +62,9 @@ ls -l ~/.vimrc || {
 # install
 zsh --version || {
     install zsh
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
+sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # link zsh
 ls -l ~/.zshrc || {
     tip zshrc true
