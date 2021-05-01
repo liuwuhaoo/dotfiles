@@ -28,7 +28,7 @@ function install() {
     tip $1 true
     command="$INSTALL_COMMAND $1"
     $command
-    tip $1
+    tip $1 false
 }
 
 function check_version_install() {
@@ -47,13 +47,13 @@ check_version_install vim
 ls -l ~/.vim/autoload || {
     tip vim-plug true
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    tip vim-plug
+    tip vim-plug false
 }
 
 ls -l ~/.vimrc || {
     tip vimrc true
     ln -s $PWD/.vimrc ~/.vimrc
-    tip vimrc
+    tip vimrc false
 }
 
 # zsh
@@ -88,7 +88,7 @@ ls -l ~/.zshrc || {
     tip zshrc true
     rm ~/.zshrc
     ln -s $PWD/.zshrc ~/.zshrc
-    tip zshrc
+    tip zshrc false
 }
 
 #alacritty
@@ -101,7 +101,7 @@ then
 else
     tip alacritty_configuration true
     ln -s $PWD/.config/alacritty ~/.config/alacritty
-    tip alacritty_configuration
+    tip alacritty_configuration false
 fi
 
 # lf
@@ -114,7 +114,7 @@ then
 else
     tip lf_configuration true
     ln -s $PWD/.config/lf ~/.config/lf
-    tip lf_configuration
+    tip lf_configuration false
 fi
 
 # neofetch
@@ -130,6 +130,6 @@ then
 else
     tip tmux_conf true
     ln -s $PWD/.tmux.conf ~/.tmux.conf
-    tip tmux_conf
+    tip tmux_conf false
 fi
 
