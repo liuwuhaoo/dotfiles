@@ -119,3 +119,17 @@ fi
 
 # neofetch
 check_version_install neofetch
+
+# tmux
+install tmux
+
+#tmux configuration
+if [ -f ~/.tmux.conf ];
+then
+    echo "tmux.conf Installed."
+else
+    tip tmux_conf true
+    ln -s $PWD/.tmux.conf ~/.tmux.conf
+    tip tmux_conf
+fi
+
