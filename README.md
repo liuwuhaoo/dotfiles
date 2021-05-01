@@ -4,9 +4,18 @@ bash install.sh
 
 # vim
 :PlugInstall
+
+# alacritty need add ppa
+sudo add-apt-repository ppa:aslatter/ppa
+
+# cascadia mono bold
+https://github.com/microsoft/cascadia-code
 ```
 
+
+
 # Terminal Configuration
+
 - [ ] curl
 - [ ] zsh
   - [ ] git plugin
