@@ -63,7 +63,10 @@ ls -l ~/.vimrc || {
 zsh --version || {
     install zsh
 }
-sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# .oh-my-zsh
+ls -l ~/.oh-my-zsh || {
+    sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
 
 # link zsh
 ls -l ~/.zshrc || {

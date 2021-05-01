@@ -18,7 +18,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-" ale
+" ale plugin
 Plug 'dense-analysis/ale'
 
 call plug#end()

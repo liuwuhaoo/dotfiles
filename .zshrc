@@ -95,48 +95,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# scripts path
-sp=~/scripts
-: ~sp
-
 alias gbb='git branch  | grep -v \*'
-
-export PATH="$PATH:/usr/local/smlnj/bin"
-
-# Created by mirror-config-china
-export IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
-export NODIST_IOJS_MIRROR=https://npm.taobao.org/mirrors/iojs
-export NVM_IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
-export NVMW_IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
-export NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-export NODIST_NODE_MIRROR=https://npm.taobao.org/mirrors/node
-export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-export NVMW_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-export NVMW_NPM_MIRROR=https://npm.taobao.org/mirrors/npm
-# End of mirror-config-china
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/lwh/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/lwh/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/lwh/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/lwh/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-alias gcc='gcc-8'
-alias cc='gcc-8'
-alias g++='g++-8'
-alias c++='c++-8'
-PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig:/usr/local/Cellar/jpeg/9d/lib/pkgconfig"
-
-alias clang='/usr/local/opt/llvm/bin/clang'
-alias python='python3'
-alias msfconsole='/opt/metasploit-framework/bin/msfconsole'
-
