@@ -6,7 +6,7 @@ OS="`uname`"
 if [ $OS == "Linux" ]
 then
     echo "Linux"
-    INSTALL_COMMAND="sudo apt-get install"
+    INSTALL_COMMAND="sudo apt-get install -y "
 elif [ $OS == "Darwin" ]
 then
     echo "Mac OS"
