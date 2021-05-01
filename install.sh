@@ -91,3 +91,15 @@ ls -l ~/.zshrc || {
     tip zshrc
 }
 
+#alacritty
+install alacritty
+
+#alacritty configuration
+if [ -d ~/.config/alacritty ];
+then
+    echo "Alacritty Configuration Installed."
+else
+    tip alacritty_configuration true
+    ln -s $PWD/.config/alacritty ~/.config/alacritty
+fi
+

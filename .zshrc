@@ -66,7 +66,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 #
 
-export EDITOR = 'vim'
+export EDITOR='vim'
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -89,7 +89,6 @@ export EDITOR = 'vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /Users/lwh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
