@@ -22,6 +22,7 @@ bash install.sh
 // zsh install would interupt the whole install. After zsh installed, run the command again.
 bash install.sh
 ```
+Logout and Login after installation.
 
 ## Install vim plugins
 ```

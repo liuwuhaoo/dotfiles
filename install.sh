@@ -110,7 +110,7 @@ ls -l ~/.oh-my-zsh || {
 check_version_install autojump
 
 # zsh-syntax-highlighting
-if [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting];
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ];
 then
     echo "zsh-syntax-highlighting Installed"
 else
@@ -118,7 +118,7 @@ else
 fi
 
 # zsh-autosuggestions
-if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions];
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ];
 then
     echo "zsh-autosuggestions Installed"
 else
@@ -127,8 +127,12 @@ fi
 
 # link zsh
 rm ~/.zshrc
-ls -l ~/.zshrc || {
+if [ -f ~/.zshrc ];
+then
+    echo "zhsrc Installed"
+else
     tip zshrc true
     ln -s $PWD/.zshrc ~/.zshrc
     tip zshrc false
-}
+fi
+
