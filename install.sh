@@ -18,12 +18,15 @@ fi
 # vim
 # install
 vim --version || {
-    command = "$INSTALL_COMMAND vim"
+    echo "Vim Installing\n"
+    command="$INSTALL_COMMAND vim"
     $command
+    echo "Vim Installed\n"
 }
 
+echo "Vimrc linking\n"
 ln -s $PWD/.vimrc /tmp/.vimrc
-echo "vim done\n"
+echo "Vimrc linked\n"
 
 # zsh
 # install
