@@ -105,7 +105,7 @@ else
 fi
 
 # lf
-check_version_install lf
+echo "Install lf manually: https://github.com/gokcehan/lf/releases"
 
 #lf configuration
 if [ -d ~/.config/lf ];
