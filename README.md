@@ -14,6 +14,9 @@
 
 ## Install
 ```
+// (linux) add alacritty ppa
+sudo add-apt-repository ppa:aslatter/ppa
+
 bash install.sh
 
 // zsh install would interupt the whole install. After zsh installed, run the command again.
@@ -25,15 +28,11 @@ bash install.sh
 :PlugInstall
 ```
 
-## (linux) Add alacritty ppa
-```
-sudo add-apt-repository ppa:aslatter/ppa
-```
-
 ## Install cascadia mono bold
 https://github.com/microsoft/cascadia-code
 
 ## manually install lf
 https://github.com/gokcehan/lf/releases
+
 
 
