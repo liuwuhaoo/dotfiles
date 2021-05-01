@@ -15,11 +15,20 @@ else
     echo "no support"
 fi
 
+function tip() {
+    if ($2)
+    then
+        echo -e "$1 Installing.\n"
+    else
+        echo -e "$1 Installed.\n"
+    fi
+}
+
 function install() {
-    echo -e "$1 Installing\n"
+    tip $1 true
     command="$INSTALL_COMMAND $1"
     $command
-    echo -e "$1 Installed\n"
+    tip $1
 }
 
 # curl
@@ -33,16 +42,29 @@ vim --version || {
     install vim
 }
 
-echo -e "Vim-plug Installing"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo -e "Vim-plug Installed"
+ls -l ~/.vim/autoload || {
+    tip vim-plug true
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    tip vim-plug
+}
 
-echo -e "Vimrc Linking\n"
-ln -s $PWD/.vimrc ~/.vimrc
-echo -e "Vimrc Linked\n"
+ls -l ~/.vimrc || {
+    tip vimrc true
+    ln -s $PWD/.vimrc ~/.vimrc
+    tip vimrc
+}
 
 # zsh
 # install
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+zsh --version || {
+    vim zsh true
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    vim zsh
+}
 # link zsh
+ls -l ~/.zshrc || {
+    tip zshrc true
+    ln -s $PWD/.zshrc ~/.zshrc
+    tip zshrc
+}
 
