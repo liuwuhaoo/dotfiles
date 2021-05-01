@@ -58,6 +58,7 @@ ls -l ~/.vimrc || {
 # install
 zsh --version || {
     install zsh
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 # link zsh
 ls -l ~/.zshrc || {
