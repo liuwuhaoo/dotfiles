@@ -1,4 +1,5 @@
 ## run following commands
+
 ```
 bash install.sh
 
@@ -10,6 +11,9 @@ sudo add-apt-repository ppa:aslatter/ppa
 
 # cascadia mono bold
 https://github.com/microsoft/cascadia-code
+
+# manually install lf
+https://github.com/gokcehan/lf/releases
 ```
 
 

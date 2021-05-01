@@ -116,3 +116,6 @@ else
     ln -s $PWD/.config/lf ~/.config/lf
     tip lf_configuration
 fi
+
+# neofetch
+check_version_install neofetch
