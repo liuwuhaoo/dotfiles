@@ -24,9 +24,12 @@ vim --version || {
     echo -e "Vim Installed\n"
 }
 
-echo -e "Vimrc linking\n"
+echo -e "Vim-plug Installing" || curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim || echo -e "Vim-plug Installed"
+
+echo -e "Vimrc Linking\n"
 ln -s $PWD/.vimrc ~/.vimrc
-echo -e "Vimrc linked\n"
+echo -e "Vimrc Linked\n"
 
 # zsh
 # install
