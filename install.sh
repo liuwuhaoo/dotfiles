@@ -56,41 +56,6 @@ ls -l ~/.vimrc || {
     tip vimrc false
 }
 
-# zsh
-check_version_install zsh
-
-# .oh-my-zsh
-ls -l ~/.oh-my-zsh || {
-    sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-}
-
-# auto-jump
-check_version_install autojump
-
-# zsh-syntax-highlighting
-if [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting];
-then
-    echo "zsh-syntax-highlighting Installed"
-else
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-fi
-
-# zsh-autosuggestions
-if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions];
-then
-    echo "zsh-autosuggestions Installed"
-else
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-fi
-
-# link zsh
-rm ~/.zhsrc
-ls -l ~/.zshrc || {
-    tip zshrc true
-    ln -s $PWD/.zshrc ~/.zshrc
-    tip zshrc false
-}
-
 #alacritty
 install alacritty
 
@@ -133,3 +98,37 @@ else
     tip tmux_conf false
 fi
 
+# zsh
+check_version_install zsh
+
+# .oh-my-zsh
+ls -l ~/.oh-my-zsh || {
+    sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
+# auto-jump
+check_version_install autojump
+
+# zsh-syntax-highlighting
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting];
+then
+    echo "zsh-syntax-highlighting Installed"
+else
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+
+# zsh-autosuggestions
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions];
+then
+    echo "zsh-autosuggestions Installed"
+else
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
+# link zsh
+rm ~/.zshrc
+ls -l ~/.zshrc || {
+    tip zshrc true
+    ln -s $PWD/.zshrc ~/.zshrc
+    tip zshrc false
+}
