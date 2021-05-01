@@ -101,5 +101,18 @@ then
 else
     tip alacritty_configuration true
     ln -s $PWD/.config/alacritty ~/.config/alacritty
+    tip alacritty_configuration
 fi
 
+# lf
+check_version_install lf
+
+#lf configuration
+if [ -d ~/.config/lf ];
+then
+    echo "Lf Configuration Installed."
+else
+    tip lf_configuration true
+    ln -s $PWD/.config/lf ~/.config/lf
+    tip lf_configuration
+fi
