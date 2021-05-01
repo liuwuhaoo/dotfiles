@@ -7,6 +7,7 @@ bash install.sh
 ```
 
 # Terminal Configuration
+- [ ] curl
 - [ ] zsh
   - [ ] git plugin
   - [ ] auto jump
@@ -14,3 +15,4 @@ bash install.sh
 - [ ] vimrc
 - [ ] tmux
 - [ ] lf
+

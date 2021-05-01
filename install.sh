@@ -15,13 +15,22 @@ else
     echo "no support"
 fi
 
+function install() {
+    echo -e "$1 Installing\n"
+    command="$INSTALL_COMMAND $1"
+    $command
+    echo -e "$1 Installed\n"
+}
+
+# curl
+curl --version || {
+    install curl
+}
+
 # vim
 # install
 vim --version || {
-    echo -e "Vim Installing\n"
-    command="$INSTALL_COMMAND vim"
-    $command
-    echo -e "Vim Installed\n"
+    install vim
 }
 
 echo -e "Vim-plug Installing"
