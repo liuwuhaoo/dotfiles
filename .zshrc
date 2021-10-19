@@ -95,3 +95,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias gbb='git branch  | grep -v \*'
+[ -f "/Users/lwh/.ghcup/env" ] && source "/Users/lwh/.ghcup/env" # ghcup-env
+
+export PATH="/usr/local/opt/bison/bin:$PATH"
