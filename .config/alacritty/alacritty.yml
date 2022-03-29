@@ -37,6 +37,8 @@ window:
     x: 5
     y: 5
 
+  opacity: 0.9
+
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
 
@@ -119,8 +121,6 @@ bell:
   duration: 2
   color: '#ffffff'
   #command: None
-
-background_opacity: 0.9
 
 #selection:
   # This string contains all characters that are used as separators for
