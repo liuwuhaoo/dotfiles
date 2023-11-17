@@ -29,8 +29,8 @@ Logout and Login after installation.
 :PlugInstall
 ```
 
-## Install cascadia mono bold
-https://github.com/microsoft/cascadia-code
+## Install Monospace font
+https://github.com/githubnext/monaspace
 
 ## manually install lf
 https://github.com/gokcehan/lf/releases

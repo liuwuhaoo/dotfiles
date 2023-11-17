@@ -62,20 +62,20 @@ scrolling:
 
 font:
   normal:
-    family: Cascadia Mono PL 
+    family: Monaspace Neon 
     # family: Roboto Mono for Powerline
     style: Light
 
   bold:
-    family: Cascadia Mono PL 
+    family: Monaspace Neon 
     style: SemiBold
 
   italic:
-    family: Cascadia Mono PL
+    family: Monaspace Neon
     style: Italic
 
   bold_italic:
-    family: Cascadia Mono PL
+    family: Monaspace Neon
     style: SemiBold Italic
 
   size: 14.0
