@@ -70,17 +70,17 @@ else
 fi
 
 # lf
-echo "Install lf manually: https://github.com/gokcehan/lf/releases"
+# echo "Install lf manually: https://github.com/gokcehan/lf/releases"
 
 #lf configuration
-if [ -d ~/.config/lf ];
-then
-    echo "Lf Configuration Installed."
-else
-    tip lf_configuration true
-    ln -s $PWD/.config/lf ~/.config/lf
-    tip lf_configuration false
-fi
+# if [ -d ~/.config/lf ];
+# then
+#     echo "Lf Configuration Installed."
+# else
+#     tip lf_configuration true
+#     ln -s $PWD/.config/lf ~/.config/lf
+#     tip lf_configuration false
+# fi
 
 # neofetch
 check_version_install neofetch

@@ -151,8 +151,8 @@ live_config_reload: true
 #   - (Windows) powershell
 shell:
   program: /bin/zsh
-#  args:
-#    - --login
+  args:
+    - --login
 
 # Startup directory
 #

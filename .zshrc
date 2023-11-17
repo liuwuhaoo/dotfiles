@@ -1,3 +1,5 @@
+# echo "~/.zshrc"
+# echo $PATH
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -89,12 +91,66 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+if ! [ -n "$TMUX" ]; then
+    # MacPorts Installer addition on 2023-03-24_at_15:53:31: adding an appropriate PATH variable for use with MacPorts.
+    export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+    # Finished adapting your PATH environment variable for use with MacPorts.
+    
+    
+    # Added by OrbStack: command-line tools and integration
+    source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    export PATH="/opt/homebrew/opt/llvm@16/bin:$PATH"
+    export DRJIT_LIBLLVM_PATH="/opt/homebrew/opt/llvm@16/lib/libLLVM.dylib"
+fi
 
-alias gbb='git branch  | grep -v \*'
-[ -f "/Users/lwh/.ghcup/env" ] && source "/Users/lwh/.ghcup/env" # ghcup-env
 
-export PATH="/usr/local/opt/bison/bin:$PATH"
+if ! [ -n "$TMUX" ]; then
+    # Created by `pipx` on 2023-05-08 13:30:04
+    export PATH="$PATH:/Users/sueaki/.local/bin"
+    
+    # homebrew
+    export PATH="/opt/homebrew/bin:$PATH"
+
+    #texlive
+    export PATH="/usr/local/texlive/2022/bin/universal-darwin:$PATH"
+    # export PATH="/Applications/CMake.app/Contents/bin:/opt/loca/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/texlive/2022/bin/universal-darwin:$PATH"
+    # export PATH="/opt/homebrew/bin:/opt/local/bin:/usr/local/texlive/2022/bin/universal-darwin:/usr/local/bin:/usr/local/opt/bison/bin:$PATH"
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    
+    alias gbb='git branch  | grep -v \*'
+    [ -f "/Users/lwh/.ghcup/env" ] && source "/Users/lwh/.ghcup/env" # ghcup-env
+fi
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/sueaki/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/sueaki/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/sueaki/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/sueaki/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+# cargo
+. "$HOME/.cargo/env"
+
+export IDF_TARGET=esp32s3
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
+
+# echo $PATH
+
+[ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh

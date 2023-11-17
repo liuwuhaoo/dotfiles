@@ -27,4 +27,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'dense-analysis/ale'
 let g:ale_set_highlights = 0
 
+Plug 'scrooloose/nerdtree'
+
 call plug#end()
