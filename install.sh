@@ -44,6 +44,10 @@ check_version_install wget
 # vim
 check_version_install vim
 
+#bat
+check_version_install bat
+
+
 ls -l ~/.vim/autoload || {
     tip vim-plug true
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

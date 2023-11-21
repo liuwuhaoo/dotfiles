@@ -108,7 +108,7 @@ fi
 
 if ! [ -n "$TMUX" ]; then
     # Created by `pipx` on 2023-05-08 13:30:04
-    export PATH="$PATH:/Users/sueaki/.local/bin"
+    export PATH="$PATH:/Users/${USER}/.local/bin"
     
     # homebrew
     export PATH="/opt/homebrew/bin:$PATH"
@@ -128,15 +128,15 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/sueaki/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$($HOME/anaconda3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
 
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/sueaki/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/sueaki/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/sueaki/anaconda3/bin:$PATH"
+        export PATH="$HOME/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -145,7 +145,9 @@ unset __conda_setup
 
 
 # cargo
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
 
 export IDF_TARGET=esp32s3
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
@@ -153,4 +155,4 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
 # echo $PATH
 
-[ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
+export SHELL=/usr/bin/zsh
